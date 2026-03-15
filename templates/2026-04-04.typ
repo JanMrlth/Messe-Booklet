@@ -50,9 +50,6 @@
 // Liturgische Symbole
 // ══════════════════════════════════════
 
-#let sym-stroke = 1pt + grau
-#let sym-kopf = 1.2pt
-
 #let dreikreuz = box(
   inset: (x: 1pt),
   baseline: 3pt,
@@ -72,26 +69,17 @@
   text(size: 7pt, fill: grau)[⌒],
 )
 
-#let kniebeuge = {
-  box(width: 8pt, height: 10pt, baseline: 7pt)[
-    #place(dx: 2.5pt, dy: 0pt, circle(radius: sym-kopf, fill: grau))
-    #place(line(start: (3.2pt, 2.4pt), end: (3.2pt, 5.8pt), stroke: sym-stroke))
-    #place(line(start: (3.2pt, 3.5pt), end: (5.5pt, 4.8pt), stroke: sym-stroke))
-    #place(line(start: (5.5pt, 4.8pt), end: (4.5pt, 3pt), stroke: sym-stroke))
-    #place(line(start: (3.2pt, 5.8pt), end: (0.8pt, 7.8pt), stroke: sym-stroke))
-    #place(line(start: (0.8pt, 7.8pt), end: (4pt, 9pt), stroke: sym-stroke))
-    #place(line(start: (3.2pt, 5.8pt), end: (3.2pt, 9pt), stroke: sym-stroke))
-  ]
-}
+#let kniebeuge = box(
+  inset: (x: 1pt, y: 0pt),
+  baseline: 1pt,
+  text(size: 7pt, fill: grau)[🧎],
+)
 
-#let stehen = {
-  box(width: 7pt, height: 10pt, baseline: 7pt)[
-    #place(dx: 2pt, dy: 0pt, circle(radius: sym-kopf, fill: grau))
-    #place(line(start: (3pt, 2.4pt), end: (3pt, 6pt), stroke: sym-stroke))
-    #place(line(start: (3pt, 6pt), end: (0.5pt, 9.5pt), stroke: sym-stroke))
-    #place(line(start: (3pt, 6pt), end: (5.5pt, 9.5pt), stroke: sym-stroke))
-  ]
-}
+#let stehen = box(
+  inset: (x: 1pt, y: 0pt),
+  baseline: 1pt,
+  text(size: 7pt, fill: grau)[🧍],
+)
 
 #let lateinkreuz(size: 40pt, farbe: rgb("#5B2C6F")) = {
   let w = size * 0.6

@@ -101,11 +101,12 @@
 
 // ── Abschnitts-Block mit Seitenstreifen ──
 
-#let abschnitt(strich, body) = {
+#let abschnitt(strich, body) = context {
+  let aussen = calc.odd(here().page())
   block(
     width: 100%,
-    inset: (left: 8pt, top: 0pt, bottom: 0pt, right: 0pt),
-    stroke: (left: strich),
+    inset: if aussen { (right: 8pt) } else { (left: 8pt) },
+    stroke: if aussen { (right: strich) } else { (left: strich) },
   )[#body]
 }
 

@@ -9,23 +9,43 @@
 //   Violett:     Schlussevangelium — Mysterium
 // ═══════════════════════════════════════════════════════════════
 
-#let strich-state = state("strich", none)
-
 #set page(
   paper: "a5",
   binding: left,
   margin: (top: 16mm, bottom: 14mm, inside: 16mm, outside: 11mm),
   numbering: none,
   foreground: context {
-    let s = strich-state.get()
-    if s != none {
-      let aussen = calc.odd(here().page())
-      if aussen {
-        place(right + top, dx: -5mm,
-          line(start: (0pt, 0pt), end: (0pt, 180mm), stroke: s))
-      } else {
-        place(left + top, dx: 5mm,
-          line(start: (0pt, 0pt), end: (0pt, 180mm), stroke: s))
+    let page-num = here().page()
+    let aussen = calc.odd(page-num)
+    let all = query(<strich>)
+    let before = all.filter(m => m.location().page() < page-num)
+    let initial = if before.len() > 0 { before.last().value } else { none }
+    let on-page = all.filter(m => m.location().page() == page-num)
+
+    let margin-top = 16mm
+    let content-h = 180mm
+
+    let draw-seg(y0, h, s) = {
+      if s != none and h > 0pt {
+        if aussen {
+          place(right + top, dx: -5mm, dy: margin-top + y0,
+            line(start: (0pt, 0pt), end: (0pt, h), stroke: s))
+        } else {
+          place(left + top, dx: 5mm, dy: margin-top + y0,
+            line(start: (0pt, 0pt), end: (0pt, h), stroke: s))
+        }
+      }
+    }
+
+    if on-page.len() == 0 {
+      draw-seg(0pt, content-h, initial)
+    } else {
+      let pts = on-page.map(m => (y: m.location().position().y - margin-top, s: m.value))
+      draw-seg(0pt, pts.first().y, initial)
+      for i in range(pts.len()) {
+        let y0 = pts.at(i).y
+        let y1 = if i + 1 < pts.len() { pts.at(i + 1).y } else { content-h }
+        draw-seg(y0, y1 - y0, pts.at(i).s)
       }
     }
   },
@@ -117,7 +137,7 @@
 // ── Abschnitts-Block mit Seitenstreifen ──
 
 #let abschnitt(strich, body) = {
-  strich-state.update(strich)
+  [#metadata(strich) <strich>]
   body
 }
 
@@ -141,7 +161,7 @@
 }
 
 #let teil-label(name, farbe) = {
-  strich-state.update(none)
+  [#metadata(none) <strich>]
   v(2pt)
   block(
     width: 100%,
@@ -717,7 +737,7 @@
   #v(2pt)
   #rubrik[Leoninische Gebete nach der stillen Messe \(3× Ave Maria, Salve Regina, Oratio\).]
 
-#strich-state.update(none)
+#metadata(none) <strich>
 
 // ═══════════════════════════════════════════════════════════════
 // SEITE 8 — AUFBAU DER HEILIGEN MESSE

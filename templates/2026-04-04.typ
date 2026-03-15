@@ -24,10 +24,10 @@
     if s != none {
       let aussen = calc.odd(here().page())
       if aussen {
-        place(right + top,
+        place(right + top, dx: -5mm,
           line(start: (0pt, 0pt), end: (0pt, 180mm), stroke: s))
       } else {
-        place(left + top,
+        place(left + top, dx: 5mm,
           line(start: (0pt, 0pt), end: (0pt, 180mm), stroke: s))
       }
     }

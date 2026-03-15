@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Re-scrape Mariawald Messbuch Easter Vigil pages using LT/DT div classes
-to cleanly separate Latin and German text blocks into structured YAML.
+Scrape Mariawald Messbuch Easter Vigil pages using LT/DT div classes
+to extract paired Latin/German text blocks into structured JSON.
 """
 
+import html as html_module
 import urllib.request
 import re
 import json
-import yaml
 import time
 import sys
 
@@ -42,38 +42,11 @@ PAGES = [
 
 
 def strip_html(html_fragment):
-    """Remove HTML tags and clean up whitespace."""
+    """Remove HTML tags, decode entities, and normalize whitespace."""
     text = re.sub(r'<br\s*/?>', '\n', html_fragment)
     text = re.sub(r'<[^>]+>', '', text)
     text = text.replace('\xa0', ' ')
-    text = text.replace('&nbsp;', ' ')
-    text = text.replace('&amp;', '&')
-    text = text.replace('&lt;', '<')
-    text = text.replace('&gt;', '>')
-    text = text.replace('&aelig;', 'æ')
-    text = text.replace('&AElig;', 'Æ')
-    text = text.replace('&oelig;', 'œ')
-    text = text.replace('&OElig;', 'Œ')
-    text = text.replace('&uuml;', 'ü')
-    text = text.replace('&ouml;', 'ö')
-    text = text.replace('&auml;', 'ä')
-    text = text.replace('&Uuml;', 'Ü')
-    text = text.replace('&Ouml;', 'Ö')
-    text = text.replace('&Auml;', 'Ä')
-    text = text.replace('&szlig;', 'ß')
-    text = text.replace('&ndash;', '–')
-    text = text.replace('&mdash;', '—')
-    text = text.replace('&laquo;', '«')
-    text = text.replace('&raquo;', '»')
-    text = text.replace('&bdquo;', '„')
-    text = text.replace('&ldquo;', '"')
-    text = text.replace('&rdquo;', '"')
-    text = text.replace('&dagger;', '†')
-    text = text.replace('&hellip;', '…')
-    # Decode any remaining numeric entities
-    text = re.sub(r'&#(\d+);', lambda m: chr(int(m.group(1))), text)
-    text = re.sub(r'&#x([0-9a-fA-F]+);', lambda m: chr(int(m.group(1), 16)), text)
-    # Normalize whitespace per line
+    text = html_module.unescape(text)
     lines = []
     for line in text.split('\n'):
         line = ' '.join(line.split())
@@ -160,18 +133,10 @@ def main():
         result[node_id] = section
         time.sleep(0.3)
 
-    # Save as YAML
-    outpath = "data/mariawald_karsamstag.yaml"
+    outpath = "data/mariawald_karsamstag.json"
     with open(outpath, 'w', encoding='utf-8') as f:
-        yaml.dump(result, f, allow_unicode=True, default_flow_style=False,
-                  width=120, sort_keys=False)
-    print(f"\nSaved to {outpath}", file=sys.stderr)
-
-    # Also save as JSON for easy programmatic access
-    outpath_json = "data/mariawald_karsamstag.json"
-    with open(outpath_json, 'w', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
-    print(f"Saved to {outpath_json}", file=sys.stderr)
+    print(f"\nSaved to {outpath}", file=sys.stderr)
 
 
 if __name__ == "__main__":

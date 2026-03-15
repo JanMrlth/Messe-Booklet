@@ -8,6 +8,8 @@ data/scrape_log.txt
 # Generated intermediate files
 data/generated_sections.json
 data/generated_typst_sections.typ
+data/mariawald_karsamstag_raw.json
+data/mariawald_karsamstag.yaml
 
 # OS
 .DS_Store

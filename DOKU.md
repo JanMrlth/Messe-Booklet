@@ -25,15 +25,11 @@ Messe-Booklet/
 │   ├── messbuch_full.json          # Gesamtes Messbuch (435 Messen, 6.6 MB)
 │   ├── messbuch_index.json         # Index aller Messen mit URLs
 │   ├── mariawald_karsamstag.json   # Osternacht detailliert (24 Abschnitte)
-│   ├── mariawald_karsamstag.yaml   # Dasselbe als YAML
-│   ├── mariawald_karsamstag_raw.json # Rohdaten vor Aufbereitung
 │   └── 2026-03-22.yaml            # Passionssonntag-Daten
 ├── scripts/             # Scraping- und Aufbereitungsskripte
-│   ├── scrape_full_messbuch.py     # Gesamtes Messbuch scrapen (437 Seiten)
-│   ├── scrape_mariawald.py         # Einzelne Messe scrapen
-│   ├── convert_mariawald.py        # HTML → strukturiertes JSON/YAML
-│   ├── fill_template.py            # JSON-Daten in Typst-Template einsetzen
-│   └── gen_typst_sections.py       # Typst-bilingue-Blöcke generieren
+│   ├── scrape_full_messbuch.py     # Gesamtes Messbuch scrapen (435 Messen)
+│   ├── convert_mariawald.py        # Einzelmesse scrapen → JSON
+│   └── fill_template.py            # JSON-Daten in Typst-Template einsetzen
 ├── output/              # Kompilierte PDFs (gitignored)
 ├── docs/                # Dokumentation
 │   └── OSTERNACHT.md    # Liturgische Struktur der Osternacht

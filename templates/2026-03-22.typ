@@ -17,7 +17,7 @@
 )
 
 #set text(
-  font: "Ubuntu Sans",
+  font: ("Ubuntu Sans", "Noto Color Emoji"),
   size: 7.5pt,
   lang: "de",
   hyphenate: true,

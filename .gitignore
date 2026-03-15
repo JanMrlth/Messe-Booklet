@@ -1,0 +1,19 @@
+# Output
+output/*.pdf
+
+# Scraper checkpoints & logs
+data/scrape_checkpoint.json
+data/scrape_log.txt
+
+# Generated intermediate files
+data/generated_sections.json
+data/generated_typst_sections.typ
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
+*~

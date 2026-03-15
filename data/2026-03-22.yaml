@@ -1,0 +1,305 @@
+# Dominica I Passionis (Judica) — 22. März 2026
+# Liturgische Farbe: Violett
+# Klasse: I. Klasse
+# Besonderheiten: Ps 42 im Stufengebet entfällt, Gloria Patri entfällt
+#                 bei Introitus/Lavabo/Asperges, kein Gloria, Kreuze verhüllt
+
+datum: "22. März 2026"
+dies_liturgicus: "Dominica I Passionis"
+nomen_de: "Passionssonntag (Judica)"
+color: "violaceus"
+farbe_de: "Violett"
+classis: "I"
+nota: "Beginn der Passionszeit — Kreuze und Bilder sind verhüllt. Psalm 42 entfällt im Stufengebet. Gloria Patri entfällt bei Introitus, Lavabo und Asperges."
+
+# ── ASPERGES (vor dem Hochamt am Sonntag) ──
+
+asperges:
+  la: |
+    Aspérges me, Dómine, hyssópo, et mundábor:
+    lavábis me, et super nivem dealbábor.
+    ℣. Miserére mei, Deus, secúndum magnam misericórdiam tuam.
+    Aspérges me…
+  de: |
+    Besprenge mich, o Herr, mit Ysop, und ich werde rein;
+    wasche mich, und ich werde weißer als Schnee.
+    ℣. Erbarme dich meiner, o Gott, nach deiner großen Barmherzigkeit.
+    Besprenge mich…
+  rubrica: "Gloria Patri entfällt in der Passionszeit."
+
+asperges_oratio:
+  la: |
+    Exáudi nos, Dómine sancte, Pater omnípotens, ætérne Deus:
+    et míttere dignéris sanctum Angelum tuum de cælis,
+    qui custódiat, fóveat, prótegat, vísitet atque deféndat
+    omnes habitántes in hoc habitáculo.
+    Per Christum Dóminum nostrum. ℟. Amen.
+  de: |
+    Erhöre uns, heiliger Herr, allmächtiger Vater, ewiger Gott:
+    und sende gnädig deinen heiligen Engel vom Himmel,
+    der alle, die in diesem Hause wohnen,
+    behüte, nähre, schütze, besuche und verteidige.
+    Durch Christus, unsern Herrn. ℟. Amen.
+
+# ── INTROITUS ──
+
+introitus:
+  la: |
+    Iúdica me, Deus, et discérne causam meam de gente non sancta:
+    ab hómine iníquo et dolóso éripe me:
+    quia tu es Deus meus et fortitúdo mea.
+    ℣. Emítte lucem tuam et veritátem tuam:
+    ipsa me deduxérunt et adduxérunt
+    in montem sanctum tuum et in tabernácula tua.
+    Iúdica me…
+  de: |
+    Richte mich, Gott, und führe meine Sache
+    gegen ein unheiliges Volk;
+    von dem ungerechten und arglistigen Menschen befreie mich;
+    denn du bist mein Gott und meine Stärke.
+    ℣. Sende dein Licht und deine Wahrheit;
+    sie sollen mich leiten und mich führen
+    zu deinem heiligen Berge und zu deinen Zelten.
+    Richte mich…
+  rubrica: "Gloria Patri entfällt."
+
+# ── COLLECTA (Tagesgebet) ──
+
+collecta:
+  la: |
+    Quǽsumus, omnípotens Deus,
+    famíliam tuam propítius réspice:
+    ut, te largiénte, regátur in córpore;
+    et, te servánte, custodiátur in mente.
+    Per Dóminum nostrum Iesum Christum…
+    ℟. Amen.
+  de: |
+    Wir bitten dich, allmächtiger Gott,
+    blicke gnädig auf deine Familie:
+    damit sie durch deine Freigebigkeit am Leibe gelenkt
+    und durch deine Bewahrung im Geiste behütet werde.
+    Durch unsern Herrn Jesus Christus…
+    ℟. Amen.
+
+# ── LECTIO (Epistel) ──
+
+lectio:
+  referenz: "Hebr 9, 11-15"
+  la: |
+    Fratres: Christus assístens Póntifex futurórum bonórum,
+    per ámplius et perféctius tabernáculum non manufáctum,
+    id est, non huius creatiónis:
+    neque per sánguinem hircórum aut vitulórum,
+    sed per próprium sánguinem introívit semel in Sancta,
+    ætérna redemptióne invénta.
+    Si enim sanguis hircórum et taurórum,
+    et cinis vítulæ aspérsus inquinátos sanctíficat
+    ad emundatiónem carnis:
+    quanto magis sanguis Christi,
+    qui per Spíritum Sanctum semetípsum óbtulit immaculátum Deo,
+    emundábit consciéntiam nostram ab opéribus mórtuis,
+    ad serviéndum Deo vivénti?
+    Et ídeo novi testaménti mediátor est:
+    ut, morte intercedénte,
+    in redemptiónem eárum prævaricatiónum
+    quæ erant sub prióri testaménto,
+    repromissiónem accípiant, qui vocáti sunt,
+    ætérnæ hereditátis, in Christo Iesu, Dómino nostro.
+  de: |
+    Brüder! Christus ist als Hoherpriester der künftigen Güter erschienen
+    und ist durch das größere und vollkommenere Zelt,
+    das nicht von Menschenhand gemacht,
+    das heißt nicht von dieser Schöpfung ist,
+    auch nicht mit dem Blute von Böcken und Stieren,
+    sondern mit seinem eigenen Blut ein für allemal
+    in das Heiligtum eingegangen
+    und hat eine ewige Erlösung bewirkt.
+    Denn wenn das Blut von Böcken und Stieren
+    und die Asche einer Kuh die Unreinen besprengt
+    und zur Reinheit des Fleisches heiligt:
+    wieviel mehr wird das Blut Christi,
+    der sich selbst durch den Heiligen Geist
+    als makelloses Opfer Gott dargebracht hat,
+    unser Gewissen reinigen von toten Werken,
+    damit wir dem lebendigen Gott dienen?
+    Und darum ist er Mittler eines neuen Bundes,
+    damit durch seinen Tod, der zur Erlösung
+    von den Übertretungen unter dem ersten Bund geschehen ist,
+    die Berufenen die verheißene ewige Erbschaft empfangen,
+    in Christus Jesus, unserm Herrn.
+
+# ── GRADUALE ──
+
+graduale:
+  la: |
+    Eripe me, Dómine, de inimícis meis: doce me fácere voluntátem tuam.
+    ℣. Liberátor meus, Dómine, de géntibus iracúndis:
+    ab insurgéntibus in me exaltábis me:
+    a viro iníquo erípies me.
+  de: |
+    Entreiße mich, o Herr, meinen Feinden; lehre mich, deinen Willen tun.
+    ℣. Mein Befreier, o Herr, von den zornigen Völkern:
+    über die, die sich gegen mich erheben, wirst du mich erhöhen;
+    dem ungerechten Manne wirst du mich entreißen.
+
+# ── TRACTUS ──
+
+tractus:
+  la: |
+    Sæpe expugnavérunt me a iuventúte mea.
+    ℣. Dicat nunc Israël: sæpe expugnavérunt me a iuventúte mea.
+    ℣. Etenim non potuérunt mihi: supra dorsum meum fabricavérunt peccatóres.
+    ℣. Prolongavérunt iniquitátes suas: Dóminus iustus concídit cervíces peccatórum.
+  de: |
+    Oft haben sie mich bedrängt von meiner Jugend an.
+    ℣. So spreche nun Israel: Oft haben sie mich bedrängt von Jugend an.
+    ℣. Doch sie vermochten nichts gegen mich; auf meinem Rücken schmiedeten die Sünder.
+    ℣. Sie zogen ihre Bosheit in die Länge; der gerechte Herr zerschlug den Nacken der Sünder.
+
+# ── EVANGELIUM ──
+
+evangelium:
+  referenz: "Io 8, 46-59"
+  la: |
+    In illo témpore: Dicébat Iesus turbis Iudæórum:
+    Quis ex vobis árguet me de peccáto?
+    Si veritátem dico vobis, quare non créditis mihi?
+    Qui ex Deo est, verba Dei audit.
+    Proptérea vos non audítis, quia ex Deo non estis.
+    Respondérunt ergo Iudǽi et dixérunt ei:
+    Nonne bene dícimus nos, quia Samaritánus es tu, et dæmónium habes?
+    Respóndit Iesus: Ego dæmónium non hábeo,
+    sed honorífico Patrem meum, et vos inhonorástis me.
+    Ego autem non quæro glóriam meam: est qui quærat et iúdicet.
+    Amen, amen, dico vobis:
+    si quis sermónem meum serváverit, mortem non vidébit in ætérnum.
+    Dixérunt ergo Iudǽi: Nunc cognóvimus quia dæmónium habes.
+    Abraham mórtuus est et Prophétæ, et tu dicis:
+    Si quis sermónem meum serváverit, non gustábit mortem in ætérnum.
+    Numquid tu maior es patre nostro Abraham, qui mórtuus est?
+    Et Prophétæ mórtui sunt. Quem teípsum facis?
+    Respóndit Iesus: Si ego glorífico meípsum,
+    glória mea nihil est:
+    est Pater meus, qui gloríficat me,
+    quem vos dícitis quia Deus vester est, et non cognovístis eum:
+    ego autem novi eum.
+    Et si díxero quia non scio eum, ero símilis vobis, mendax.
+    Sed scio eum et sermónem eius servo.
+    Abraham pater vester exsultávit ut vidéret diem meum:
+    vidit et gavísus est.
+    Dixérunt ergo Iudǽi ad eum:
+    Quinquagínta annos nondum habes, et Abraham vidísti?
+    Dixit eis Iesus: Amen, amen, dico vobis,
+    ántequam Abraham fíeret, ego sum.
+    Tulérunt ergo lápides, ut iácerent in eum:
+    Iesus autem abscóndit se et exívit de templo.
+  de: |
+    In jener Zeit sprach Jesus zu den Scharen der Juden:
+    Wer von euch kann mich einer Sünde beschuldigen?
+    Wenn ich die Wahrheit sage, warum glaubt ihr mir nicht?
+    Wer aus Gott ist, hört Gottes Wort.
+    Darum hört ihr nicht, weil ihr nicht aus Gott seid.
+    Da antworteten die Juden und sprachen zu ihm:
+    Sagen wir nicht mit Recht, daß du ein Samariter bist und einen Teufel hast?
+    Jesus antwortete: Ich habe keinen Teufel,
+    sondern ich ehre meinen Vater, und ihr verunehrt mich.
+    Ich aber suche nicht meine Ehre; es ist Einer, der sie sucht und richtet.
+    Wahrlich, wahrlich, ich sage euch:
+    Wenn jemand mein Wort bewahrt, wird er den Tod nicht schauen in Ewigkeit.
+    Da sagten die Juden: Jetzt erkennen wir, daß du einen Teufel hast.
+    Abraham ist gestorben und die Propheten, und du sagst:
+    Wenn jemand mein Wort bewahrt, wird er den Tod nicht kosten in Ewigkeit.
+    Bist du etwa größer als unser Vater Abraham, der gestorben ist?
+    Auch die Propheten sind gestorben. Für wen gibst du dich aus?
+    Jesus antwortete: Wenn ich mich selbst verherrliche,
+    ist meine Herrlichkeit nichts.
+    Es ist mein Vater, der mich verherrlicht,
+    von dem ihr sagt, er sei euer Gott; und doch kennt ihr ihn nicht.
+    Ich aber kenne ihn.
+    Und wenn ich sagte, ich kenne ihn nicht, wäre ich ein Lügner wie ihr.
+    Aber ich kenne ihn und halte sein Wort.
+    Abraham, euer Vater, jubelte, daß er meinen Tag sehen sollte;
+    er sah ihn und freute sich.
+    Da sagten die Juden zu ihm:
+    Du bist noch nicht fünfzig Jahre alt und hast Abraham gesehen?
+    Jesus sprach zu ihnen: Wahrlich, wahrlich, ich sage euch:
+    Ehe Abraham ward, bin ich.
+    Da hoben sie Steine auf, um auf ihn zu werfen.
+    Jesus aber verbarg sich und ging aus dem Tempel hinaus.
+
+# ── OFFERTORIUM ──
+
+offertorium:
+  la: |
+    Confitébor tibi, Dómine, in toto corde meo:
+    retríbue servo tuo: vivam, et custódiam sermónes tuos:
+    vivífica me secúndum verbum tuum, Dómine.
+  de: |
+    Ich will dich preisen, o Herr, aus ganzem Herzen;
+    vergilt deinem Knecht: laß mich leben, und ich will deine Worte bewahren;
+    belebe mich nach deinem Wort, o Herr.
+
+# ── SECRETA ──
+
+secreta:
+  la: |
+    Hæc múnera, quǽsumus, Dómine,
+    et víncula nostræ pravitátis absólvant,
+    et tuæ nobis misericórdiæ dona concílient.
+    Per Dóminum nostrum…
+    ℟. Amen.
+  de: |
+    Diese Gaben, so bitten wir, o Herr,
+    mögen die Fesseln unserer Verkehrtheit lösen
+    und uns die Geschenke deiner Barmherzigkeit gewinnen.
+    Durch unsern Herrn…
+    ℟. Amen.
+
+# ── COMMUNIO ──
+
+communio:
+  la: |
+    Hoc corpus, quod pro vobis tradétur:
+    hic calix novi testaménti est in meo sánguine, dicit Dóminus:
+    hoc fácite, quotiescúmque súmitis, in meam commemoratiónem.
+  de: |
+    Dies ist mein Leib, der für euch hingegeben wird;
+    dieser Kelch ist der neue Bund in meinem Blute, spricht der Herr;
+    tut dies, sooft ihr ihn empfangt, zu meinem Gedächtnis.
+
+# ── POSTCOMMUNIO ──
+
+postcommunio:
+  la: |
+    Adésto nobis, Dómine Deus noster:
+    et, quos tuis mystériis recreásti, perpétuis defénde subsídiis.
+    Per Dóminum nostrum…
+    ℟. Amen.
+  de: |
+    Steh uns bei, Herr, unser Gott,
+    und die du durch deine Geheimnisse erquickt hast,
+    die verteidige mit immerwährender Hilfe.
+    Durch unsern Herrn…
+    ℟. Amen.
+
+# ── ORDINARIUM (Kurzfassungen / Verweise) ──
+
+ordinarium:
+  stufengebet_nota: "Psalm 42 (Iudica me) entfällt in der Passionszeit. Der Priester beginnt unmittelbar mit: In nómine Patris…"
+  kyrie: "Kýrie, eléison. Kýrie, eléison. Kýrie, eléison. Christe, eléison. Christe, eléison. Christe, eléison. Kýrie, eléison. Kýrie, eléison. Kýrie, eléison."
+  gloria_nota: "Das Gloria entfällt in der Fastenzeit."
+  credo_nota: "Credo — Großes Glaubensbekenntnis (Nicæno-Constantinopolitanum)"
+  praefatio: "Præfatio de Sancta Cruce (Präfation vom Heiligen Kreuz)"
+  sanctus:
+    la: "Sanctus, Sanctus, Sanctus Dóminus Deus Sábaoth. Pleni sunt cæli et terra glória tua. Hosánna in excélsis. Benedíctus qui venit in nómine Dómini. Hosánna in excélsis."
+    de: "Heilig, heilig, heilig, Herr, Gott der Heerscharen. Himmel und Erde sind erfüllt von deiner Herrlichkeit. Hosanna in der Höhe. Hochgelobt sei, der da kommt im Namen des Herrn. Hosanna in der Höhe."
+  pater_noster:
+    la: "Pater noster, qui es in cælis: sanctificétur nomen tuum; advéniat regnum tuum; fiat volúntas tua, sicut in cælo et in terra. Panem nostrum quotidiánum da nobis hódie; et dimítte nobis débita nostra, sicut et nos dimíttimus debitóribus nostris; et ne nos indúcas in tentatiónem. ℟. Sed líbera nos a malo."
+    de: "Vater unser, der du bist im Himmel, geheiligt werde dein Name; dein Reich komme; dein Wille geschehe, wie im Himmel so auf Erden. Unser tägliches Brot gib uns heute; und vergib uns unsere Schuld, wie auch wir vergeben unsern Schuldigern; und führe uns nicht in Versuchung. ℟. Sondern erlöse uns von dem Bösen."
+  agnus_dei:
+    la: "Agnus Dei, qui tollis peccáta mundi: miserére nobis. Agnus Dei, qui tollis peccáta mundi: miserére nobis. Agnus Dei, qui tollis peccáta mundi: dona nobis pacem."
+    de: "Lamm Gottes, du nimmst hinweg die Sünden der Welt: erbarme dich unser. Lamm Gottes, du nimmst hinweg die Sünden der Welt: erbarme dich unser. Lamm Gottes, du nimmst hinweg die Sünden der Welt: gib uns den Frieden."
+  schlussevangelium_nota: "Letztes Evangelium: In princípio erat Verbum… (Io 1, 1-14)"
+  ite_missa_est:
+    la: "℣. Ite, Missa est. ℟. Deo grátias."
+    de: "℣. Gehet hin, ihr seid entlassen. ℟. Gott sei Dank."

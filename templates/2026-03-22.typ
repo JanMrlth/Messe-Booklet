@@ -17,7 +17,7 @@
 )
 
 #set text(
-  font: ("Ubuntu Sans", "Noto Color Emoji"),
+  font: "Ubuntu Sans",
   size: 7.5pt,
   lang: "de",
   hyphenate: true,
@@ -60,17 +60,19 @@
   text(size: 7pt, fill: grau)[⌒],
 )
 
-// Knien — Gebetshaltung (aufrecht kniend, Hände gefaltet)
+#let fa-icon(code) = text(font: "Font Awesome 6 Free Solid", code)
+
+// Knien — Font Awesome person-praying
 #let kniebeuge = box(
   inset: (x: 1pt, y: 0pt),
   baseline: 1pt,
-  text(size: 7pt, fill: grau)[🧎],
+  text(size: 7pt, fill: grau)[#fa-icon("\u{f683}")],
 )
 
 #let stehen = box(
   inset: (x: 1pt, y: 0pt),
   baseline: 1pt,
-  text(size: 7pt, fill: grau)[🧍],
+  text(size: 7pt, fill: grau)[#fa-icon("\u{f183}")],
 )
 
 // Schlichtes lateinisches Kreuz — gerade, symmetrisch

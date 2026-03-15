@@ -20,7 +20,7 @@
 )
 
 #set text(
-  font: ("Ubuntu Sans", "Noto Color Emoji"),
+  font: "Ubuntu Sans",
   size: 7.5pt,
   lang: "de",
   hyphenate: true,
@@ -69,16 +69,18 @@
   text(size: 7pt, fill: grau)[⌒],
 )
 
+#let fa-icon(code) = text(font: "Font Awesome 6 Free Solid", code)
+
 #let kniebeuge = box(
   inset: (x: 1pt, y: 0pt),
   baseline: 1pt,
-  text(size: 7pt, fill: grau)[🧎],
+  text(size: 7pt, fill: grau)[#fa-icon("\u{f683}")],
 )
 
 #let stehen = box(
   inset: (x: 1pt, y: 0pt),
   baseline: 1pt,
-  text(size: 7pt, fill: grau)[🧍],
+  text(size: 7pt, fill: grau)[#fa-icon("\u{f183}")],
 )
 
 #let lateinkreuz(size: 40pt, farbe: rgb("#5B2C6F")) = {

@@ -21,11 +21,11 @@
     if s != none {
       let aussen = calc.odd(here().page())
       if aussen {
-        place(right + top, dx: 4mm,
-          line(start: (0pt, 0pt), end: (0pt, 100%), stroke: s))
+        place(right + top,
+          line(start: (0pt, 0pt), end: (0pt, 180mm), stroke: s))
       } else {
-        place(left + top, dx: -4mm,
-          line(start: (0pt, 0pt), end: (0pt, 100%), stroke: s))
+        place(left + top,
+          line(start: (0pt, 0pt), end: (0pt, 180mm), stroke: s))
       }
     }
   },

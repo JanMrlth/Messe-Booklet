@@ -9,11 +9,26 @@
 //   Violett:     Schlussevangelium — Mysterium
 // ═══════════════════════════════════════════════════════════════
 
+#let strich-state = state("strich", none)
+
 #set page(
   paper: "a5",
   binding: left,
   margin: (top: 16mm, bottom: 14mm, inside: 16mm, outside: 11mm),
   numbering: none,
+  foreground: context {
+    let s = strich-state.get()
+    if s != none {
+      let aussen = calc.odd(here().page())
+      if aussen {
+        place(right + top, dx: 4mm,
+          line(start: (0pt, 0pt), end: (0pt, 100%), stroke: s))
+      } else {
+        place(left + top, dx: -4mm,
+          line(start: (0pt, 0pt), end: (0pt, 100%), stroke: s))
+      }
+    }
+  },
 )
 
 #set text(
@@ -101,13 +116,9 @@
 
 // ── Abschnitts-Block mit Seitenstreifen ──
 
-#let abschnitt(strich, body) = context {
-  let aussen = calc.odd(here().page())
-  block(
-    width: 100%,
-    inset: if aussen { (right: 8pt) } else { (left: 8pt) },
-    stroke: if aussen { (right: strich) } else { (left: strich) },
-  )[#body]
+#let abschnitt(strich, body) = {
+  strich-state.update(strich)
+  body
 }
 
 // ── Hilfsfunktionen ──
@@ -130,6 +141,7 @@
 }
 
 #let teil-label(name, farbe) = {
+  strich-state.update(none)
   v(2pt)
   block(
     width: 100%,
@@ -704,6 +716,8 @@
 
   #v(2pt)
   #rubrik[Leoninische Gebete nach der stillen Messe \(3× Ave Maria, Salve Regina, Oratio\).]
+
+#strich-state.update(none)
 
 // ═══════════════════════════════════════════════════════════════
 // SEITE 8 — AUFBAU DER HEILIGEN MESSE

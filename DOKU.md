@@ -152,7 +152,7 @@ Der Scraper extrahiert diese Paare, dekodiert HTML-Entities (`&aelig;` → `æ`,
 |----------|-------|
 | `#bilingue(lat, deu)` | Zweispaltiger lat./dt. Block |
 | `#abschnitt(strich)[…]` | Abschnitt mit farbigem Seitenstreifen |
-| `#rubrik[…]` | Regieanweisung (klein, grau, kursiv) |
+| `#rubrik[…]` | Regieanweisung (6.5pt, schwarz, kursiv) |
 | `#section-title("…", farbe: …)` | Abschnittsüberschrift mit Unterstrich |
 | `#teil-label("…", farbe)` | Farbiger Abschnittskopf (weiß auf Farbe) |
 | `#referenz[…]` | Bibelstellenangabe |
@@ -164,8 +164,8 @@ Der Scraper extrahiert diese Paare, dekodiert HTML-Entities (`&aelig;` → `æ`,
 | ✛ | `#kreuz` | Kreuzzeichen |
 | ✛✛✛ | `#dreikreuz` | Dreifaches Kreuz (Stirn, Mund, Brust) |
 | ⌒ | `#verneigung` | Verneigung des Hauptes |
-| 🧎 | `#kniebeuge` | Knien / Kniebeuge |
-| 🧍 | `#stehen` | Stehen |
+| ![FA](https://fontawesome.com/icons/person-praying) | `#kniebeuge` | Knien / Kniebeuge (Font Awesome `f683`) |
+| ![FA](https://fontawesome.com/icons/person) | `#stehen` | Stehen (Font Awesome `f183`) |
 
 Diese Symbole werden inline im Gebetstext verwendet, z.B.:
 ```typst

@@ -16,7 +16,8 @@
   paper: "a5",
   binding: left,
   margin: (top: 16mm, bottom: 14mm, inside: 16mm, outside: 11mm),
-  numbering: none,
+  numbering: "1",
+  number-align: center,
   foreground: context {
     let page-num = here().page()
     let aussen = calc.odd(page-num)
@@ -63,7 +64,7 @@
 
 #set par(
   justify: true,
-  leading: 0.5em,
+  leading: 0.52em,
 )
 
 // ══════════════════════════════════════
@@ -135,12 +136,12 @@
 // Farbige Seitenstreifen — S/W-unterscheidbar
 // ══════════════════════════════════════
 
-#let licht-strich = stroke(paint: licht-farbe, thickness: 4pt, dash: (4pt, 1.5pt, 1.5pt, 1.5pt))        // ·:·:· eng getrippt
-#let prophetien-strich = stroke(paint: prophetien-farbe, thickness: 4pt, dash: (8pt, 3pt))               // ── ── lang gestrichelt
-#let litanei-strich = stroke(paint: litanei-farbe, thickness: 4pt)                                        // ━━━ durchgezogen
-#let taufe-strich = stroke(paint: taufe-farbe, thickness: 4pt, dash: (6pt, 2pt))                         // ─ ─ kurz gestrichelt
-#let versprechen-strich = stroke(paint: versprechen-farbe, thickness: 4pt, dash: (3pt, 3pt))              // ─·─ gleichmäßig
-#let messe-strich = stroke(paint: messe-farbe, thickness: 4pt, dash: (2pt, 2pt))                         // ·· ·· gepunktet
+#let licht-strich = stroke(paint: licht-farbe, thickness: 5pt, dash: (4pt, 1.5pt, 1.5pt, 1.5pt))        // ·:·:· eng getrippt
+#let prophetien-strich = stroke(paint: prophetien-farbe, thickness: 5pt, dash: (8pt, 3pt))               // ── ── lang gestrichelt
+#let litanei-strich = stroke(paint: litanei-farbe, thickness: 5pt)                                        // ━━━ durchgezogen
+#let taufe-strich = stroke(paint: taufe-farbe, thickness: 5pt, dash: (6pt, 2pt))                         // ─ ─ kurz gestrichelt
+#let versprechen-strich = stroke(paint: versprechen-farbe, thickness: 5pt, dash: (3pt, 3pt))              // ─·─ gleichmäßig
+#let messe-strich = stroke(paint: messe-farbe, thickness: 5pt, dash: (2pt, 2pt))                         // ·· ·· gepunktet
 // Laudes verwendet licht-strich
 
 // ══════════════════════════════════════
@@ -153,7 +154,7 @@
 }
 
 #let rubrik(body) = {
-  text(size: 6pt, fill: grau, style: "italic")[#body]
+  text(size: 6.5pt, fill: black, style: "italic")[#body]
 }
 
 #let section-title(titel, farbe: grau) = {
@@ -177,6 +178,7 @@
     inset: (x: 4pt, y: 2pt),
     fill: farbe,
     radius: 1pt,
+    stroke: 0.5pt + black,
   )[
     #text(size: 5.5pt, fill: white, weight: "bold", tracking: 1pt)[#upper(name)]
   ]
@@ -186,7 +188,7 @@
 #let bilingue(la, de) = {
   grid(
     columns: (1fr, 1fr),
-    column-gutter: 7pt,
+    column-gutter: 8pt,
     text(size: 7pt, style: "italic", lang: "la")[#la],
     text(size: 7pt, lang: "de")[#de],
   )
@@ -200,7 +202,7 @@
 // SEITE 1 — DECKBLATT
 // ═══════════════════════════════════════════════════════════════
 
-#page()[
+#page(numbering: none)[
   #v(1fr)
 
   #align(center)[
@@ -208,7 +210,7 @@
 
     #v(10pt)
 
-    #text(size: 6.5pt, fill: grau, tracking: 1.5pt, weight: "bold")[
+    #text(size: 6.5pt, fill: black, tracking: 1.5pt, weight: "bold")[
       #upper[Die Feier der Osternacht]
     ]
 
@@ -222,28 +224,11 @@
 
     #v(3pt)
 
-    #text(size: 9.5pt, fill: grau)[
+    #text(size: 9.5pt, fill: black)[
       Sabbato Sancto — Karsamstag
     ]
 
-    #v(14pt)
-
-    #block(
-      width: 70%,
-      inset: 8pt,
-      radius: 2pt,
-      fill: rgb("#FDF2D0").lighten(40%),
-    )[
-      #align(center)[
-        #text(size: 6.5pt, fill: licht-farbe.darken(20%))[
-          Ordo Hebdomadae Sanctae instauratus (1955) \
-          Feier nach Einbruch der Dunkelheit \
-          Liturgische Farbe: #strong[Violett] → #strong[Weiß]
-        ]
-      ]
-    ]
-
-    #v(16pt)
+    #v(12pt)
 
     #text(size: 9pt, weight: "bold")[4. April 2026]
 
@@ -254,58 +239,41 @@
       Missale Romanum 1962
     ]
 
-    #v(16pt)
+    #v(18pt)
 
-    // Legende — 7 Teile der Osternacht
-    #block(width: 80%)[
-      #set text(size: 5.5pt, fill: grau)
+    // Legende — 7 Teile der Osternacht (mit Strichmuster)
+    #block(width: 85%)[
+      #set text(size: 6.5pt, fill: grau)
       #grid(
-        columns: (auto, 1fr),
+        columns: (auto, 18pt, 1fr),
         column-gutter: 6pt,
-        row-gutter: 3pt,
-        rect(width: 10pt, height: 6pt, fill: licht-farbe, radius: 1pt),
-        [Lucernarium — Lichtfeier],
-        rect(width: 10pt, height: 6pt, fill: prophetien-farbe, radius: 1pt),
-        [Prophetien — Wortgottesdienst],
-        rect(width: 10pt, height: 6pt, fill: litanei-farbe, radius: 1pt),
-        [Allerheiligenlitanei],
-        rect(width: 10pt, height: 6pt, fill: taufe-farbe, radius: 1pt),
-        [Taufwasserweihe],
-        rect(width: 10pt, height: 6pt, fill: versprechen-farbe, radius: 1pt),
-        [Erneuerung der Taufversprechen],
-        rect(width: 10pt, height: 6pt, fill: messe-farbe, radius: 1pt),
-        [Missa Sollemnis Vigiliæ Paschalis],
-        rect(width: 10pt, height: 6pt, fill: licht-farbe, radius: 1pt),
-        [Laudes — Morgengebet der Auferstehung],
-      )
-    ]
-
-    #v(10pt)
-
-    // Symbollegende
-    #block(width: 65%)[
-      #set text(size: 5pt, fill: grau)
-      #grid(
-        columns: (auto, 1fr, auto, 1fr),
-        column-gutter: 5pt,
-        row-gutter: 2pt,
-        kreuz, [Kreuzzeichen],
-        dreikreuz, [3 Kreuze (Stirn, Mund, Brust)],
-        verneigung, [Verneigung (Haupt)],
-        kniebeuge, [Kniebeuge / Knien],
-        stehen, [Stehen],
-        [],[]
+        row-gutter: 5pt,
+        rect(width: 12pt, height: 8pt, fill: licht-farbe, radius: 1pt),
+        align(horizon, line(length: 18pt, stroke: stroke(paint: licht-farbe, thickness: 3pt, dash: (4pt, 1.5pt, 1.5pt, 1.5pt)))),
+        [I · Lucernarium — Lichtfeier],
+        rect(width: 12pt, height: 8pt, fill: prophetien-farbe, radius: 1pt),
+        align(horizon, line(length: 18pt, stroke: stroke(paint: prophetien-farbe, thickness: 3pt, dash: (8pt, 3pt)))),
+        [II · Prophetien — Wortgottesdienst],
+        rect(width: 12pt, height: 8pt, fill: litanei-farbe, radius: 1pt),
+        align(horizon, line(length: 18pt, stroke: stroke(paint: litanei-farbe, thickness: 3pt))),
+        [III · Allerheiligenlitanei],
+        rect(width: 12pt, height: 8pt, fill: taufe-farbe, radius: 1pt),
+        align(horizon, line(length: 18pt, stroke: stroke(paint: taufe-farbe, thickness: 3pt, dash: (6pt, 2pt)))),
+        [IV · Taufwasserweihe],
+        rect(width: 12pt, height: 8pt, fill: versprechen-farbe, radius: 1pt),
+        align(horizon, line(length: 18pt, stroke: stroke(paint: versprechen-farbe, thickness: 3pt, dash: (3pt, 3pt)))),
+        [V · Erneuerung der Taufversprechen],
+        rect(width: 12pt, height: 8pt, fill: messe-farbe, radius: 1pt),
+        align(horizon, line(length: 18pt, stroke: stroke(paint: messe-farbe, thickness: 3pt, dash: (2pt, 2pt)))),
+        [VI · Missa Sollemnis Vigiliæ Paschalis],
+        rect(width: 12pt, height: 8pt, fill: licht-farbe, radius: 1pt),
+        align(horizon, line(length: 18pt, stroke: stroke(paint: licht-farbe, thickness: 3pt, dash: (4pt, 1.5pt, 1.5pt, 1.5pt)))),
+        [VII · Laudes — Morgengebet der Auferstehung],
       )
     ]
   ]
 
   #v(1fr)
-
-  #align(center)[
-    #text(size: 5pt, fill: grau)[
-      Latein und Deutsch · Ordo Hebdomadae Sanctae instauratus
-    ]
-  ]
 ]
 
 // ═══════════════════════════════════════════════════════════════
@@ -359,15 +327,15 @@
 #page()[
   #v(8pt)
   #align(center)[
-    #text(size: 7pt, weight: "bold", fill: grau, tracking: 0.5pt)[
+    #text(size: 7pt, weight: "bold", fill: black, tracking: 0.5pt)[
       #upper[Hinweise zur Mitfeier]
     ]
     #v(1pt)
-    #line(length: 40%, stroke: 0.3pt + grau)
+    #line(length: 40%, stroke: 0.3pt + black)
   ]
   #v(8pt)
 
-  #set text(size: 6.5pt, fill: grau)
+  #set text(size: 6.5pt, fill: black)
   #set par(leading: 0.55em)
 
   Die Osternacht ist die „Mutter aller Vigilien" _(Augustinus)_ und der Höhepunkt des Kirchenjahres. Die Feier nach dem _Ordo Hebdomadæ Sanctæ instauratus_ (1955) gliedert sich in sieben Teile, die durch farbige Seitenstreifen kenntlich gemacht sind.
@@ -375,11 +343,11 @@
   #v(6pt)
 
   #block(width: 100%)[
-    #set text(size: 6pt)
+    #set text(size: 7pt)
     #grid(
       columns: (auto, 1fr),
       column-gutter: 6pt,
-      row-gutter: 4pt,
+      row-gutter: 7pt,
 
       strong[Kerzen], [Zu Beginn erhält jeder eine Kerze. Sie wird bei der Prozession am Lumen Christi entzündet und bei den Taufversprechen (Teil V) erneut angezündet.],
 
@@ -389,11 +357,11 @@
     )
   ]
 
-  #v(4pt)
+  #v(6pt)
 
   #align(center)[
-    #block(width: 60%)[
-      #set text(size: 5.5pt, fill: grau)
+    #block(width: 65%)[
+      #set text(size: 7pt)
       #grid(
         columns: (auto, 1fr, auto, 1fr),
         column-gutter: 5pt,
@@ -401,19 +369,21 @@
         stehen, [Stehen],
         kniebeuge, [Knien],
         kreuz, [Kreuzzeichen],
+        dreikreuz, [3× Kreuz (Stirn, Mund, Brust)],
         verneigung, [Verneigung],
+        [], [],
       )
     ]
   ]
 
-  #v(6pt)
+  #v(10pt)
 
   #block(width: 100%)[
-    #set text(size: 6pt)
+    #set text(size: 7pt)
     #grid(
       columns: (auto, 1fr),
       column-gutter: 6pt,
-      row-gutter: 4pt,
+      row-gutter: 7pt,
 
       strong[Wechsel], [Nach den Prophetien (Teil II) wechselt der Zelebrant von violetten auf weiße Paramente — die Fastenzeit ist zu Ende.],
 
@@ -425,10 +395,38 @@
     )
   ]
 
+  #v(10pt)
+  #line(length: 100%, stroke: 0.3pt + black)
+  #v(6pt)
+
+  #text(size: 7pt, weight: "bold", fill: black, tracking: 0.3pt)[
+    #upper[Besonderheiten gegenüber normaler Messe]
+  ]
+  #v(5pt)
+
+  #block(width: 100%)[
+    #set text(size: 7pt)
+    #grid(
+      columns: (6pt, 1fr, 6pt, 1fr),
+      column-gutter: 4pt,
+      row-gutter: 3.5pt,
+      [–], [Kein Stufengebet],
+      [–], [Kein Introitus],
+      [–], [Kein Credo],
+      [–], [Kein Offertorium-Vers],
+      [–], [Kein Agnus Dei],
+      [–], [Kein Schlussevangelium],
+      [–], [Gloria mit Glockengelaut],
+      [–], [3× Alleluia aufsteigend],
+      [–], [Laudes angeschlossen],
+      [–], [_Ite, Missa est, allelúia_],
+    )
+  ]
+
   #v(1fr)
 
   #align(center)[
-    #text(size: 5pt, fill: grau, style: "italic")[
+    #text(size: 5.5pt, fill: grau, style: "italic")[
       Die Texte folgen dem Missale Romanum (1962).
     ]
   ]
@@ -1808,37 +1806,6 @@ A. Und mit deinem Geiste.],
 
     rect(width: 7pt, height: 7pt, fill: licht-farbe, radius: 1pt), [VII], strong[Laudes — Morgengebet],
     [], [], [Psalm 150 · Benedictus · Postcommunio · Segen],
-  )
-]
-
-#v(18pt)
-#line(length: 100%, stroke: 0.2pt + grau)
-#v(10pt)
-
-// Besonderheiten gegenüber normaler Messe
-#align(center)[
-  #text(size: 6.5pt, weight: "bold", fill: grau, tracking: 0.5pt)[
-    #upper[Besonderheiten der Osternacht]
-  ]
-]
-#v(8pt)
-
-#block(width: 100%)[
-  #set text(size: 5.5pt, fill: grau)
-  #grid(
-    columns: (auto, 1fr),
-    column-gutter: 6pt,
-    row-gutter: 3pt,
-    [—], [Kein Stufengebet (Ps 42 + Confiteor entfallen)],
-    [—], [Kein Introitus (Litanei geht in Kyrie über)],
-    [—], [Kein Credo],
-    [—], [Kein Offertorium-Vers],
-    [—], [Kein Agnus Dei],
-    [—], [Kein Schlussevangelium],
-    [—], [Gloria mit Glockengeläut und Enthüllung der Bilder],
-    [—], [3× Alleluia in aufsteigendem Ton],
-    [—], [_Ite, Missa est, allelúia, allelúia_],
-    [—], [Laudes direkt an die Messe angeschlossen],
   )
 ]
 

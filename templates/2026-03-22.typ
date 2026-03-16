@@ -13,7 +13,8 @@
   paper: "a5",
   binding: left,
   margin: (top: 16mm, bottom: 14mm, inside: 16mm, outside: 11mm),
-  numbering: none,
+  numbering: "1",
+  number-align: center,
   foreground: context {
     let page-num = here().page()
     let aussen = calc.odd(page-num)
@@ -60,7 +61,7 @@
 
 #set par(
   justify: true,
-  leading: 0.5em,
+  leading: 0.52em,
 )
 
 // ── Farben (liturgisch) ──
@@ -129,10 +130,10 @@
 // ── Farbige Seitenstreifen mit S/W-unterscheidbaren Mustern ──
 // Im Farbdruck: Farbe erkennbar. Im S/W-Druck: Muster unterscheidbar.
 
-#let prelim-strich = stroke(paint: prelim-farbe, thickness: 4pt)                                          // ━━━ durchgezogen
-#let vormesse-strich = stroke(paint: vormesse-farbe, thickness: 4pt, dash: (8pt, 3pt))                    // ── ── lang gestrichelt
-#let opfer-strich = stroke(paint: opfer-farbe, thickness: 4pt, dash: (2pt, 2pt))                          // ·· ·· kurz (gepunktet)
-#let schluss-strich = stroke(paint: schluss-farbe, thickness: 4pt, dash: (6pt, 2pt, 1.5pt, 2pt))          // ─·─· Strich-Punkt
+#let prelim-strich = stroke(paint: prelim-farbe, thickness: 5pt)                                          // ━━━ durchgezogen
+#let vormesse-strich = stroke(paint: vormesse-farbe, thickness: 5pt, dash: (8pt, 3pt))                    // ── ── lang gestrichelt
+#let opfer-strich = stroke(paint: opfer-farbe, thickness: 5pt, dash: (2pt, 2pt))                          // ·· ·· kurz (gepunktet)
+#let schluss-strich = stroke(paint: schluss-farbe, thickness: 5pt, dash: (6pt, 2pt, 1.5pt, 2pt))          // ─·─· Strich-Punkt
 
 // ── Abschnitts-Block mit Seitenstreifen ──
 
@@ -144,7 +145,7 @@
 // ── Hilfsfunktionen ──
 
 #let rubrik(body) = {
-  text(size: 6pt, fill: grau, style: "italic")[#body]
+  text(size: 6.5pt, fill: black, style: "italic")[#body]
 }
 
 #let section-title(titel, farbe: grau) = {
@@ -168,6 +169,7 @@
     inset: (x: 4pt, y: 2pt),
     fill: farbe,
     radius: 1pt,
+    stroke: 0.5pt + black,
   )[
     #text(size: 5.5pt, fill: white, weight: "bold", tracking: 1pt)[#upper(name)]
   ]
@@ -177,7 +179,7 @@
 #let bilingue(la, de) = {
   grid(
     columns: (1fr, 1fr),
-    column-gutter: 7pt,
+    column-gutter: 8pt,
     text(size: 7pt, style: "italic", lang: "la")[#la],
     text(size: 7pt, lang: "de")[#de],
   )
@@ -191,7 +193,7 @@
 // SEITE 1 — DECKBLATT
 // ═══════════════════════════════════════════════════════════════
 
-#page()[
+#page(numbering: none)[
   #v(1fr)
 
   #align(center)[
@@ -199,7 +201,7 @@
 
     #v(10pt)
 
-    #text(size: 6.5pt, fill: grau, tracking: 1.5pt, weight: "bold")[
+    #text(size: 6.5pt, fill: black, tracking: 1.5pt, weight: "bold")[
       #upper[Die Heilige Messe]
     ]
 
@@ -213,7 +215,7 @@
 
     #v(3pt)
 
-    #text(size: 9.5pt, fill: grau)[
+    #text(size: 9.5pt, fill: black)[
       Passionssonntag
     ]
 
@@ -240,7 +242,7 @@
 
     #v(3pt)
 
-    #text(size: 6.5pt, fill: grau)[
+    #text(size: 6.5pt, fill: black)[
       Außerordentliche Form des Römischen Ritus \
       Missale Romanum 1962
     ]
@@ -249,7 +251,7 @@
 
     // Legende — 4 Messteile
     #block(width: 75%)[
-      #set text(size: 5.5pt, fill: grau)
+      #set text(size: 6.5pt, fill: black)
       #grid(
         columns: (auto, 1fr),
         column-gutter: 6pt,
@@ -269,11 +271,11 @@
 
     // Symbollegende
     #block(width: 65%)[
-      #set text(size: 5pt, fill: grau)
+      #set text(size: 6.5pt, fill: black)
       #grid(
         columns: (auto, 1fr, auto, 1fr),
         column-gutter: 5pt,
-        row-gutter: 2pt,
+        row-gutter: 3pt,
         kreuz, [Kreuzzeichen],
         dreikreuz, [3 Kreuze (Stirn, Mund, Brust)],
         verneigung, [Verneigung (Haupt)],
@@ -287,7 +289,7 @@
   #v(1fr)
 
   #align(center)[
-    #text(size: 5pt, fill: grau)[
+    #text(size: 5.5pt, fill: grau)[
       Latein und Deutsch · Ordinarium und Proprium
     ]
   ]
@@ -860,7 +862,7 @@
   #v(2pt)
 
   #align(center)[
-    #text(size: 5pt, fill: grau)[
+    #text(size: 5.5pt, fill: grau)[
       Messe-Booklet · Außerordentliche Form · Missale Romanum 1962 \
       Texte nach dem Schott-Messbuch · Zusammengestellt als Hilfe für die Mitfeier
     ]

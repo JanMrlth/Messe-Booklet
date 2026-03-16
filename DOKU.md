@@ -25,7 +25,8 @@ Messe-Booklet/
 │   ├── messbuch_full.json          # Gesamtes Messbuch (435 Messen, 6.6 MB)
 │   ├── messbuch_index.json         # Index aller Messen mit URLs
 │   ├── mariawald_karsamstag.json   # Osternacht detailliert (24 Abschnitte)
-│   └── 2026-03-22.yaml            # Passionssonntag-Daten
+│   ├── 2026-03-22.yaml            # Passionssonntag-Daten
+│   └── alte-messe-de.md            # Liturgisches Wissen von alte-messe.de (FSSP)
 ├── scripts/             # Scraping- und Aufbereitungsskripte
 │   ├── scrape_full_messbuch.py     # Gesamtes Messbuch scrapen (435 Messen)
 │   ├── convert_mariawald.py        # Einzelmesse scrapen → JSON
@@ -215,9 +216,10 @@ Die PDFs sind für **A5-Klammerheftung** ausgelegt:
 
 Die Seitenzahl ist immer ein Vielfaches von 4 (bei der Osternacht: 24 Seiten = 6 Blatt A4 = 3 Doppelblätter).
 
-## Datenquelle
+## Datenquellen
 
-Alle liturgischen Texte stammen von **[mariawalder-messbuch.de](https://www.mariawalder-messbuch.de/as62/)** — einem Online-Messbuch für die außerordentliche Form des Römischen Ritus (Missale Romanum 1962, Ordo 1955/1962). Die Seite wird betrieben von der ehemaligen Trappistenabtei Mariawald.
+- **[mariawalder-messbuch.de](https://www.mariawalder-messbuch.de/as62/)** — Online-Messbuch für die außerordentliche Form des Römischen Ritus (Missale Romanum 1962, Ordo 1955/1962). Betrieben von der ehemaligen Trappistenabtei Mariawald. Quelle für alle liturgischen Texte.
+- **[alte-messe.de](http://alte-messe.de/)** — Apostolat der Priesterbruderschaft St. Petrus (FSSP). Erklärung aller Riten der heiligen Messe nach P. Martin Ramm FSSP, „Zum Altare Gottes will ich treten". Zusammengefasst in `data/alte-messe-de.md`.
 
 ## Lizenz
 
